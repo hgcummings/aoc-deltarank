@@ -1,0 +1,20 @@
+{
+
+  "manifest_version": 2,
+  "name": "Advent of Code delta-rank",
+  "version": "0.1",
+
+  "description": "Shows private leaderboard points and rankings based on delta times",
+
+  "icons": {
+    "48": "icons/aoc-deltarank-48.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.adventofcode.com/*"],
+      "js": ["index.js"]
+    }
+  ]
+
+}
