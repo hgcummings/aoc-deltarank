@@ -37,10 +37,17 @@ async function showDeltaRanks() {
     members.forEach((member, i) => {
         const row = document.createElement("div");
         row.classList.add("privboard-row");
-        row.innerHTML = `<span class="privboard-position">${String(i + 1).padStart(posDigits)}) </span>${String(member.points).padStart(pointsDigits)} <span class="privboard-name"></span>`;
 
-        row.getElementsByClassName("privboard-name")[0].innerText = member.name;
+        const position = document.createElement("span");
+        position.classList.add("privboard-position");
+        position.innerText = String(i + 1).padStart(posDigits) + ") ";
+
+        const name = document.createElement("span");
+        name.classList.add("privboard-name");
+        name.innerText = member.name;
         
+        row.append(position, String(member.points).padStart(pointsDigits) + " ", name);
+
         parent.appendChild(row);
     });
 }
