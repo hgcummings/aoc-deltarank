@@ -2,7 +2,7 @@
 
   "manifest_version": 2,
   "name": "Advent of Code delta-rank",
-  "version": "0.1",
+  "version": "0.2",
 
   "description": "Shows private leaderboard points and rankings based on delta times",
 
