@@ -1,7 +1,11 @@
 async function showDeltaRanks() {
     console.log("Showing delta ranks...");
 
-    const response = await fetch(window.location.href + ".json");
+    const apiUrl = new URL(window.location.href);
+    apiUrl.search = "";
+    apiUrl.pathname += ".json";
+
+    const response = await fetch(apiUrl);
     const data = await response.json();
     const members = Object.values(data.members);
 
