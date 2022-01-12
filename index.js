@@ -56,16 +56,13 @@ async function showDeltaRanks() {
         position.classList.add("privboard-position");
         position.innerText = String(i + 1).padStart(posDigits) + ") ";
 
-        let name = existingNames.find(elem => elem.innerText.replace(" (AoC++)", "") === member.name);
+        const nameText = member.name || `(anonymous user #${member.id})`;
+        let name = existingNames.find(elem => elem.innerText.replace(" (AoC++)", "") === nameText);
 
         if (!name) {
             name = document.createElement("span");
             name.classList.add("privboard-name");
-            if (member.name) {
-                name.innerText = member.name;            
-            } else {
-                name.innerText = "(anonymous user #" + member.id + ")";
-            }
+            name.innerText = nameText;
         }
 
         const stars = [];
