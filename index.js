@@ -1,6 +1,4 @@
 async function showDeltaRanks() {
-    console.log("Showing delta ranks...");
-
     const headerRow = document.getElementsByClassName("privboard-row")[0];
     const parent = headerRow.parentElement;    const existingRows = parent.getElementsByClassName("privboard-row");
     const existingNames = [];
