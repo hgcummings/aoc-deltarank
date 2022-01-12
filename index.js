@@ -61,7 +61,11 @@ async function showDeltaRanks() {
         if (!name) {
             name = document.createElement("span");
             name.classList.add("privboard-name");
-            name.innerText = member.name;            
+            if (member.name) {
+                name.innerText = member.name;            
+            } else {
+                name.innerText = "(anonymous user #" + member.id + ")";
+            }
         }
 
         const stars = [];
